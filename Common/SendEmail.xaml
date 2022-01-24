@@ -70,21 +70,6 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="376,302" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="sendTo">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_To" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Subject">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Subject" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Body">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Body" />
-        </Variable.Default>
-      </Variable>
       <Variable x:TypeArguments="x:String" Name="Password" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -93,7 +78,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiOUjhHv1IE2vWGEAarTlTgAAAAACAAAAAAAQZgAAAAEAACAAAAABksm8qeqZCf7rxLU+fcZECTpi34vDMz5gpXJjbcSU5gAAAAAOgAAAAAIAACAAAADUgaNj6NgF8e1PkUBzTtUuG8+Gup1MuVpfJ0aKDXz82BAAAAAHnRWjWvG/mqQId+PYSxrHQAAAAOBuqw8Kjj/t6Ade2DytmZvnA1g5v3DONHHBMCQArLYVgzTrao5z5/pHRsQ+0c13zapHCy9TxNAZXfIcPwWZSAI=" Result="[Password]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[Body]" DisplayName="Send SMTP Mail Message" Email="patel_dirgh@hotmail.com" EnableSSL="True" From="patel_dirgh@hotmail.com" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Dirgh" Password="[Password]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="[Subject]" To="[sendTo]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" DisplayName="Send SMTP Mail Message" Email="patel_dirgh@hotmail.com" EnableSSL="True" From="patel_dirgh@hotmail.com" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Dirgh" Password="[Password]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="[in_Subject]" To="[in_To]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
       </ui:SendMail.Files>
